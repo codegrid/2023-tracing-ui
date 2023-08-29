@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="format-detection" content="email=no,telephone=no,address=no">
+<title>=^.^=</title>
+<style>
+svg {
+	display: block;
+	background-size: 100% 100%;
+}
+svg.step-0 {background-image: url( "./a1.svg" );}
+svg.step-1 {background-image: url( "./a2.svg" );}
+svg.step-2 {background-image: url( "./a3.svg" );}
+</style>
+</head>
+<body>
+
+<svg width="256" height="256" viewBox="0 0 128 128" class="step-0">
+	<!-- なぞりマスク -->
+	<clipPath id="clipping-3b">
+		<path d="m70.78,54.4c-4.8.72-10.32,2.28-16.32,4.32l-6.24,2.76c-9.72,4.56-19.08,11.28-24.36,18.96-1.56,2.28-2.28,4.68-2.28,6.84,0,1.08.24,2.16.48,3.24.48,1.8.72,2.76.96,3.72.36,1.2.72,2.88,1.44,4.92.72,2.16,2.28,4.56,4.68,4.68h.48l2.64-5.28c-1.32,0-3.12-1.68-4.08-4.32-.48-1.32-.84-3.24-.84-4.44,0-1.32.24-3.24,1.44-5.04,3.72-5.4,11.04-12.12,19.32-17.16l6.24-3.48c4.56-2.4,10.2-4.32,15.6-5.28l7.32-.48c8.52.6,20.76,5.64,20.76,19.44,0,17.16-12.48,26.16-26.88,32.04-1.56.72-2.16,1.56-2.16,2.28,0,.96.84,1.44,1.92,1.44.24,0,.36,0,.84-.12,13.56-3.12,34.68-11.4,34.68-31.68,0-15.36-11.52-26.28-28.32-27.48l-7.32.12Z" fill="#fff"/>
+	</clipPath>
+	<clipPath id="clipping-3a">
+		<path d="m29.62,103.84c6.84,0,14.28-4.44,21.72-10.68l5.4-4.68c.72-.72,1.68-1.44,2.4-2.28,3.96-4.2,12.36-13.2,18.12-27.84l.84-4.08c0-.6-.12-1.08-.24-1.44-.6-1.8-3.12-4.8-5.64-6.48-.48-.36-.96-.48-1.32-.48-.96,0-1.44.72-1.44,1.56,0,.24.12.72.24.96.6,1.32,1.08,3.24,1.08,5.28v.72l-.84,4.44c-3.36,8.88-8.88,17.28-14.64,23.28l-5.16,5.16c-4.56,3.96-9,7.2-12.72,9.48-2.16,1.32-3.84,1.8-5.16,1.8l-2.64,5.28Z" fill="#fff"/>
+	</clipPath>
+	<clipPath id="clipping-2">
+		<path  d="m48.1,67.6c.12,6.48.84,13.2,2.04,19.68l1.2,5.88c.24.84.48,1.56.6,2.04,1.2,4.08,2.64,5.28,4.92,5.28,1.2,0,2.16-.96,2.16-2.76,0-.6-.12-1.32-.36-2.16-.72-2.52-1.44-4.8-1.92-7.08l-1.44-6.36c-.72-5.04-.96-10.32-.96-14.76v-3.24l.12-5.4c.36-7.2,1.32-13.44,2.52-18.72l1.2-6.48c.24-1.32.48-2.4.84-3.72.6-2.04,1.08-3.24,2.16-4.68.48-.72.84-1.56.84-2.4,0-.6-.12-1.32-.6-1.92-2.52-3.72-6.24-6.36-8.04-6.36-.84,0-1.2.48-1.2,1.2,0,.84.84,2.88.84,6.36,0,1.32-.12,2.64-.36,3.84-.48,3-.96,6.24-1.56,9.48l-.96,6.36c-.84,6.48-1.68,12.96-1.92,19.8l-.12,6.12Z" fill="#ddd"/>
+	</clipPath>
+	<clipPath id="clipping-1">
+		<path d="m58.18,33.52c3.48-.84,8.4-1.92,11.52-2.88,1.56-.48,3.6-2.04,4.56-2.52.84-.36,2.4-.84,3.72-.84.6,0,1.8.24,2.76.48,2.4.72,3.48,1.56,3.48,3.12,0,1.32-.6,2.16-2.4,2.64-7.2,2.04-16.92,4.68-24.84,6.48.02,0-3.98,1-6.84,1.68-3.84.72-9.6,1.56-12.84,2.04-.72.12-.96.12-1.56.12-1.2,0-2.4-.24-3-.6-3-2.16-4.44-3.96-4.44-4.68,0-.36.36-.72,1.08-.72,3.36,0,5.28-.12,6.6-.24,4.32-.6,10.92-1.44,15.12-2.28l7.08-1.8Z" fill="#fff"/>
+	</clipPath>
+
+	<!-- おてほん -->
+	<path d="m70.78,53.68c0-2.04-.48-3.96-1.08-5.28-.12-.24-.24-.72-.24-.96,0-.84.48-1.56,1.44-1.56.36,0,.84.12,1.32.48,2.52,1.68,5.04,4.68,5.64,6.48.12.36.24.84.24,1.44,16.8,1.2,28.32,12.12,28.32,27.48,0,20.28-21.12,28.56-34.68,31.68-.48.12-.6.12-.84.12-1.08,0-1.92-.48-1.92-1.44,0-.72.6-1.56,2.16-2.28,14.4-5.88,26.88-14.88,26.88-32.04,0-13.8-12.24-18.84-20.76-19.44-5.76,14.64-14.16,23.64-18.12,27.84-.72.84-1.68,1.56-2.4,2.28.48,2.28,1.2,4.56,1.92,7.08.24.84.36,1.56.36,2.16,0,1.8-.96,2.76-2.16,2.76-2.28,0-3.72-1.2-4.92-5.28-.12-.48-.36-1.2-.6-2.04-7.44,6.24-14.88,10.68-21.72,10.68h-.48c-2.4-.12-3.96-2.52-4.68-4.68-.72-2.04-1.08-3.72-1.44-4.92-.24-.96-.48-1.92-.96-3.72-.24-1.08-.48-2.16-.48-3.24,0-2.16.72-4.56,2.28-6.84,5.28-7.68,14.64-14.4,24.36-18.96.24-6.84,1.08-13.32,1.92-19.8-3.84.72-9.6,1.56-12.84,2.04-.72.12-.96.12-1.56.12-1.2,0-2.4-.24-3-.6-3-2.16-4.44-3.96-4.44-4.68,0-.36.36-.72,1.08-.72,3.36,0,5.28-.12,6.6-.24,4.32-.6,10.92-1.44,15.12-2.28.6-3.24,1.08-6.48,1.56-9.48.24-1.2.36-2.52.36-3.84,0-3.48-.84-5.52-.84-6.36,0-.72.36-1.2,1.2-1.2,1.8,0,5.52,2.64,8.04,6.36.48.6.6,1.32.6,1.92,0,.84-.36,1.68-.84,2.4-1.08,1.44-1.56,2.64-2.16,4.68-.36,1.32-.6,2.4-.84,3.72,3.48-.84,8.4-1.92,11.52-2.88,1.56-.48,3.6-2.04,4.56-2.52.84-.36,2.4-.84,3.72-.84.6,0,1.8.24,2.76.48,2.4.72,3.48,1.56,3.48,3.12,0,1.32-.6,2.16-2.4,2.64-7.2,2.04-16.92,4.68-24.84,6.48-1.2,5.28-2.16,11.52-2.52,18.72,6-2.04,11.52-3.6,16.32-4.32v-.72Zm-22.68,13.92c-8.28,5.04-15.6,11.76-19.32,17.16-1.2,1.8-1.44,3.72-1.44,5.04,0,1.2.36,3.12.84,4.44.96,2.64,2.76,4.32,4.08,4.32s3-.48,5.16-1.8c3.72-2.28,8.16-5.52,12.72-9.48-1.2-6.48-1.92-13.2-2.04-19.68Zm6.24-.24c0,4.44.24,9.72.96,14.76,5.76-6,11.28-14.4,14.64-23.28-5.4.96-11.04,2.88-15.6,5.28v3.24Z" fill="#ccc"/>
+	<!-- なぞり -->
+	<g class="trace" fill="none" stroke="red" stroke-width="12" stroke-miterlimit="10" stroke-linecap="round" stroke-opacity=".5">
+		<g>
+			<path d="m29.62,41.24s14.82-1.14,24.35-3.44,28.53-8.3,28.53-8.3" clip-path="url(#clipping-1)"/>
+		</g>
+		<g>
+			<path d="m58.44,17.33s-6.94,24.17-6.94,47.17c0,18.03,5.36,35.98,5.36,35.98" clip-path="url(#clipping-2)"/>
+		</g>
+		<g>
+			<path d="m74.94,48.66s-.44,19.84-21.08,38.17c-16.99,15.09-21.65,15.7-23.36,14.67" clip-path="url(#clipping-3a)"/>
+			<path d="m30.5,101.5c-5-3-7-12-5-17,2.35-5.87,12-15,26-22,10-5,44-15,50,14,5.5,26.6-31.87,36.75-31.87,36.75" clip-path="url(#clipping-3b)"/>
+		</g>
+	</g>
+</svg>
+<button type="button" id="reset-button">やりなおす</button>
+
+<script type="module">
+const svgEl = document.querySelector( 'svg' );
+const strokesElements = Array.prototype.map.call( svgEl.querySelectorAll( '.trace > g' ), ( gEl ) => gEl.querySelectorAll( 'path' ) );
+
+const handWritingState = strokesElements.reduce( ( handWritingState, pathElList, i ) => {
+
+	handWritingState.push(
+		Array.prototype.map.call( pathElList, ( pathEl ) => {
+
+			const pathLength = pathEl.getTotalLength();
+			pathEl.style.strokeDasharray = pathLength;
+			pathEl.style.strokeDashoffset = pathLength;
+
+			return {
+				pathEl,
+				pathLength,
+				points: toPoints( pathEl, pathLength / 2 ),
+				currentPoint: 0,
+				get completed() {
+
+					return this.currentPoint >= this.points.length;
+
+				}
+			};
+
+		} ),
+	);
+
+	return handWritingState;
+
+}, [] );
+
+//
+
+const dragInfo = {
+	activePointerId: null,
+	currentPoint: 0,
+}
+function dragStart( event ) {
+
+	if ( !! dragInfo.activePointerId ) return;
+
+	const svgRect = svgEl.getBoundingClientRect();
+	const x = event.clientX - svgRect.left;
+	const y = event.clientY - svgRect.top;
+
+	// 最初の10個以内の点との距離が近ければ、スタート
+	const closest = {
+		index: - 1,
+		distance: Infinity,
+	};
+	const maxDistance = 10;
+	const maxDistanceSq = maxDistance ** 2;
+	const activePath = findActivePath();
+	if ( ! activePath ) return;
+	const points = activePath.points;
+
+	for ( let i = 0; i < 10; i ++ ) {
+
+		const point = getUnProjectedPoint( svgEl, points[ i ].x, points[ i ].y );
+		const distanceSq = ( point.x - x ) ** 2 + ( point.y - y ) ** 2;
+		if ( distanceSq <= maxDistanceSq && distanceSq < closest.distance ** 2 ) {
+
+			closest.index = i;
+			closest.distance = Math.sqrt( distanceSq );
+
+		}
+
+	}
+
+	if ( closest.index !== - 1 ) {
+
+		console.log( 'start' );
+		dragInfo.activePointerId = event.pointerId;
+		document.addEventListener( 'pointermove', dragging );
+
+	}
+
+}
+
+
+const DISTANCE_THRESHOLD = 16;
+function dragging( event ) {
+
+	if ( event.pointerId !== dragInfo.activePointerId ) return;
+
+	const svgRect = svgEl.getBoundingClientRect();
+	const x = event.clientX - svgRect.left;
+	const y = event.clientY - svgRect.top;
+	const activePath = findActivePath();
+
+	// 現在の周辺の point 10個から、現在位置を判定
+	const rangeStart = Math.max( dragInfo.currentPoint - 5, 0 );
+	const rangeEnd = Math.min( dragInfo.currentPoint + 5, activePath.points.length - 1 );
+	const points = activePath.points.slice( rangeStart, rangeEnd );
+
+	const closest = {
+		index: - 1,
+		distance: Infinity,
+	};
+	const maxDistanceSq = DISTANCE_THRESHOLD ** 2;
+
+	for ( let i = 0; i < points.length; i ++ ) {
+
+		const point = getUnProjectedPoint( svgEl, points[ i ].x, points[ i ].y );
+		const distanceSq = ( point.x - x ) ** 2 + ( point.y - y ) ** 2;
+		if ( distanceSq <= maxDistanceSq && distanceSq < closest.distance ** 2 ) {
+
+			closest.index = i + rangeStart;
+			closest.distance = Math.sqrt( distanceSq );
+
+		}
+
+	}
+
+	if ( activePath.points.length - 3 <= closest.index ) {
+
+		// 最終ポイントから 3 個以内前までに到達したら、ゴールとする
+		console.log( 'end' );
+		activePath.currentPoint = activePath.points.length;
+		activePath.pathEl.style.strokeDashoffset = 0;
+
+		const nextPath = findNextPath( activePath );
+
+		if ( ! nextPath ) {
+
+			const currentStep = getStep( activePath );
+			const nextStep = currentStep + 1;
+			svgEl.classList.remove( `step-${ currentStep }` );
+			svgEl.classList.add( `step-${ nextStep }` );
+			dragEnd();
+			return;
+
+		}
+
+		dragInfo.currentPoint = 0;
+
+	} else if ( closest.index === - 1 ) {
+
+		console.log( 'canceled' );
+		dragEnd();
+
+	} else {
+
+		activePath.currentPoint = closest.index;
+		dragInfo.currentPoint = closest.index;
+		activePath.pathEl.style.strokeDashoffset = activePath.pathLength - getDistanceFromPathStart( activePath, dragInfo.currentPoint );
+
+	}
+
+}
+
+function dragEnd() {
+
+	document.removeEventListener( 'pointermove', dragging );
+	dragInfo.activePointerId = null;
+	dragInfo.currentPoint = 0;
+
+	const activePath = findActivePath();
+	if ( ! activePath ) return;
+
+	const pathGroup = handWritingState.find( ( pathList ) => pathList.includes( activePath ) );
+	pathGroup.forEach( ( path ) => {
+
+		path.currentPoint = 0;
+		path.pathEl.style.strokeDashoffset = path.pathLength;
+
+	} );
+
+}
+
+function reset() {
+
+	handWritingState.forEach( ( pathGroup ) => {
+
+		pathGroup.forEach( ( path ) => {
+
+			path.currentPoint = 0;
+			path.pathEl.style.strokeDashoffset = path.pathLength;
+			for ( let i = 0; i < 10; i ++ ) svgEl.classList.remove( `step-${ i }` );
+			svgEl.classList.add( 'step-0' );
+
+		} );
+
+	} );
+
+}
+
+
+svgEl.addEventListener( 'pointerdown', dragStart );
+document.addEventListener( 'pointerup', dragEnd );
+document.addEventListener( 'pointercancel', dragEnd );
+document.getElementById( 'reset-button' ).addEventListener( 'click', reset );
+
+// -----------------------------------------------------------------------------
+
+function findActivePath() {
+
+	for ( let i = 0; i < handWritingState.length; i ++ ) {
+
+		const activePath = handWritingState[ i ].find( ( path ) => ! path.completed );
+		if ( activePath ) return activePath;
+
+	}
+
+}
+
+function findNextPath( currentPath ) {
+
+	const currentPathGroup = handWritingState.find( ( pathList ) => pathList.includes( currentPath ) );
+
+	if ( currentPathGroup.length === 1 ) return null;
+
+	const currentIndex = currentPathGroup.findIndex( ( path ) => path === currentPath );
+	return currentPathGroup[ currentIndex + 1 ];
+
+}
+
+function getStep( activePath ) {
+
+	return handWritingState.findIndex( ( pathList ) => pathList.includes( activePath ) );
+
+}
+
+function toPoints( pathEl, numOfPoints ) {
+
+	const pathLength = pathEl.getTotalLength();
+	const points = [];
+	for ( let i = 0; i < numOfPoints; i ++ ) {
+
+		points.push( pathEl.getPointAtLength( pathLength / numOfPoints * i ) );
+
+	}
+
+	return points;
+
+}
+
+function getUnProjectedPoint( svgEl, pointX, pointY ) {
+
+	const svgPoint = svgEl.createSVGPoint();
+	svgPoint.x = pointX;
+	svgPoint.y = pointY;
+	const unProjectedPoint = svgPoint.matrixTransform( svgEl.getCTM() );
+	return unProjectedPoint;
+
+}
+
+function getDistanceFromPathStart( path, pointIndex ) {
+
+	return ( path.pathLength / path.points.length ) * pointIndex;
+
+}
+</script>
+
+
+
+</body>
+</html>

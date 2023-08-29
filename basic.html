@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="format-detection" content="email=no,telephone=no,address=no">
+<title>=^.^=</title>
+<style>
+svg {
+	display: block;
+	background-size: 100% 100%;
+}
+</style>
+</head>
+<body>
+
+<svg width="200" height="200" viewBox="0 0 200 200" class="step-0">
+	<!-- 背景ガイド用 -->
+	<polyline points="50 50 100 50 100 150" fill="none" stroke="#ccc" stroke-width="6" />
+	<!-- ドラッグで伸びる線 -->
+	<polyline points="50 50 100 50 100 150" fill="none" stroke="#000" stroke-width="6" />
+</svg>
+<button type="button" id="reset-button">やりなおす</button>
+
+<script type="module">
+const svgEl = document.querySelector( 'svg' );
+// 「ドラッグで伸びる線」
+const lineEl = svgEl.querySelectorAll( 'polyline' )[ 1 ];
+
+// SVG の機能で、getTotalLength を利用すると線要素の長さを取得できる
+const lineLength = lineEl.getTotalLength();
+// 線の長さを stroke-dasharray と stroke-dashoffset に指定し、線の描画の長さを 0 の状態にする
+lineEl.style.strokeDasharray = lineLength;
+lineEl.style.strokeDashoffset = lineLength;
+
+// 線上に 50 個のチェックポイントを作る
+const points = toPoints( lineEl, 50 );
+
+// ユーザーが現在通過中のチェックポイント位置。最初は 0 番目
+let currentPoint = 0;
+
+//
+function dragStart( event ) {
+
+	const svgRect = svgEl.getBoundingClientRect();
+	const x = event.clientX - svgRect.left;
+	const y = event.clientY - svgRect.top;
+
+	// 最初の10個以内の点との距離が近ければ、スタート
+	const closest = {
+		index: - 1,
+		distance: Infinity,
+	};
+	const maxDistance = 10;
+	const maxDistanceSq = maxDistance ** 2;
+
+	for ( let i = 0; i < 10; i ++ ) {
+
+		const point = points[ i ];
+		const distanceSq = ( point.x - x ) ** 2 + ( point.y - y ) ** 2;
+		if ( distanceSq <= maxDistanceSq && distanceSq < closest.distance ** 2 ) {
+
+			closest.index = i;
+			closest.distance = Math.sqrt( distanceSq );
+
+		}
+
+	}
+
+	if ( closest.index !== - 1 ) {
+
+		console.log( 'start' );
+		document.addEventListener( 'mousemove', dragging );
+
+	}
+
+}
+
+
+const DISTANCE_THRESHOLD = 16;
+function dragging( event ) {
+
+	const svgRect = svgEl.getBoundingClientRect();
+	const x = event.clientX - svgRect.left;
+	const y = event.clientY - svgRect.top;
+
+	// 現在の周辺の point 10個から、現在位置を判定
+	const rangeStart = Math.max( currentPoint - 5, 0 );
+	const rangeEnd = Math.min( currentPoint + 5, points.length - 1 );
+	const activePoints = points.slice( rangeStart, rangeEnd );
+
+	const closest = {
+		index: - 1,
+		distance: Infinity,
+	};
+	const maxDistanceSq = DISTANCE_THRESHOLD ** 2;
+
+	for ( let i = 0; i < activePoints.length; i ++ ) {
+
+		const point = activePoints[ i ];
+		const distanceSq = ( point.x - x ) ** 2 + ( point.y - y ) ** 2;
+		if ( distanceSq <= maxDistanceSq && distanceSq < closest.distance ** 2 ) {
+
+			closest.index = i + rangeStart;
+			closest.distance = Math.sqrt( distanceSq );
+
+		}
+
+	}
+
+	if ( points.length - 3 <= closest.index ) {
+
+		// 最終ポイントから 3 個以内前までに到達したら、ゴールとする
+		console.log( 'end' );
+		currentPoint = points.length;
+		lineEl.style.strokeDashoffset = 0;
+		dragEnd();
+		return;
+
+	} else if ( closest.index === - 1 ) {
+
+		// 最近傍のチェックポイントが見つからなかったということは
+		// カーソルの距離が遠くなりすぎたということなので、ドラッグを中止する
+		console.log( 'canceled' );
+		reset();
+		dragEnd();
+
+	} else {
+
+    // 最近傍チェックポイントは見つかったけれどゴールはしていないので
+    // 最近傍チェックポイントを現在地として記録し、ドラッグを継続する
+    currentPoint = closest.index;
+
+    // 最近傍チェックポイントまで、線を塗りつぶす
+    // strokeDashoffsetを、「線の始点からチェックポイントまでの距離」指定する
+		// 最初に、線を50等分して、等分毎にチェックポイントとしていたので、
+		// その等分の距離を、チェックポイントのindexで掛け算することで、
+		// 「線の始点からチェックポイントまでの距離」を算出できる
+    const distanceFromPathStart = ( lineLength / points.length ) * closest.index;
+    lineEl.style.strokeDashoffset = lineLength - distanceFromPathStart;
+
+	}
+
+}
+
+function dragEnd() {
+
+	document.removeEventListener( 'mousemove', dragging );
+
+}
+
+function reset() {
+
+	currentPoint = 0;
+	lineEl.style.strokeDashoffset = lineLength;
+
+}
+
+
+svgEl.addEventListener( 'mousedown', dragStart );
+document.addEventListener( 'mouseup', dragEnd );
+document.getElementById( 'reset-button' ).addEventListener( 'click', reset );
+
+// -----------------------------------------------------------------------------
+function toPoints( lineEl, numOfPoints ) {
+
+	const lineLength = lineEl.getTotalLength();
+	const points = [];
+	for ( let i = 0; i < numOfPoints; i ++ ) {
+
+		// 線の「先端からの距離地点」の座標を取得する
+		// getPointAtLength は SVG ネイティブの機能
+		points.push( lineEl.getPointAtLength( lineLength / numOfPoints * i ) );
+
+	}
+
+	return points;
+
+}
+</script>
+
+</body>
+</html>
