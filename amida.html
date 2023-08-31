@@ -1,13 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja" prefix="og: http://ogp.me/ns#">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="format-detection" content="email=no,telephone=no,address=no">
+<title>=^.^=</title>
+<style>
+svg {
+  touch-action: none;
+}
+svg:not(.-dragging) .course polyline {
+  transition: stroke-dashoffset .3s;
+}
+</style>
+</head>
+<body>
 
-<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600" viewBox="0 0 400 600">
-  <style>
-    svg {
-      touch-action: none;
-    }
-    svg:not(.-dragging) .course polyline {
-      transition: stroke-dashoffset .3s;
-    }
-  </style>
+<svg width="400" height="600" viewBox="0 0 400 600">
   <g fill="#fff" stroke="#000" stroke-linecap="round">
     <polyline points="80 60 80 540"/>
     <polyline points="140 60 140 540"/>
@@ -254,3 +263,6 @@ function getDistanceFromPathStart( pathLength, points, pointIndex ) {
 
 }
 </script>
+
+</body>
+</html>
